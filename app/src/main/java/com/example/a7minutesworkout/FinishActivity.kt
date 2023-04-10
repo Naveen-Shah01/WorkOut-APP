@@ -30,7 +30,7 @@ class FinishActivity : AppCompatActivity() {
         }
 
         binding?.btnFinish?.setOnClickListener {
-            // why we are not using intent to go on mainActivity ? (lecture 160)
+
             finish() // close the finish activity
         }
 

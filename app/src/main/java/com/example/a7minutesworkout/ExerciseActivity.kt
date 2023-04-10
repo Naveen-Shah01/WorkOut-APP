@@ -24,12 +24,12 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     // how far we have come
     private var restProgress = 0
-    private var restTimerDuration: Long = 1
+    private var restTimerDuration: Long = 10
 
     /** for Exercise time*/
     private var exerciseTimer: CountDownTimer? = null
     private var exerciseProgress = 0
-    private var exerciseTimerDuration: Long = 1
+    private var exerciseTimerDuration: Long = 30
 
     private var exerciseList: ArrayList<ExerciseModel>? = null
     private var currentExercisePosition = -1
@@ -172,7 +172,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             // after 10000 is over
             override fun onFinish() {
-                // why using this@ExerciseActivity, why not only this?(lecture 160)
+
                 Toast.makeText(this@ExerciseActivity, "Timer is finished", Toast.LENGTH_LONG).show()
 
                 /** after Each Rest We will move to the next Exercise*/
@@ -215,7 +215,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     setupRestView()
 
                 } else { // if exceeding we will stop
-                    // why using this@ExerciseActivity, why not only this?(lecture 160)
+
                     finish() // close this activity
                     val intentToJumpFinishActivity =
                         Intent(this@ExerciseActivity, FinishActivity::class.java)
