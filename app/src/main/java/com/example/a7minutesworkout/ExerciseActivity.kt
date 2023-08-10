@@ -59,7 +59,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         binding?.toolbarExercise?.setNavigationOnClickListener {
             // will show dialog first instead of going back
             customDialogForBackButton()
-            //onBackPressed()
+            
         }
 
 
@@ -67,7 +67,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
         tts = TextToSpeech(this, this)
-        //  binding?.flProgressBar?.visibility = View.INVISIBLE
+      
         setupRestView()
 
         // only should be called after exerciseList is assigned
@@ -106,9 +106,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun setupRestView() {
         toneGenerator = ToneGenerator(AudioManager.STREAM_MUSIC, MAX_VOLUME)
         toneGenerator?.startTone(ToneGenerator.TONE_PROP_BEEP2, 400)
-        //  val toneGen1 = ToneGenerator(AudioManager.STREAM_MUSIC, 100)
-        //  toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150)
-        // opposite of setupExerciseView()
+       
         binding?.flRestView?.visibility = View.VISIBLE
         binding?.tvTitle?.visibility = View.VISIBLE
         binding?.tvExerciseName?.visibility = View.INVISIBLE
@@ -214,7 +212,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     exerciseStatusAdapter!!.notifyDataSetChanged()
                     setupRestView()
 
-                } else { // if exceeding we will stop
+                } else { 
 
                     finish() // close this activity
                     val intentToJumpFinishActivity =
