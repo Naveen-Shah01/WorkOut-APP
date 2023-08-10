@@ -30,9 +30,7 @@ class ExerciseStatusAdapter(val items: ArrayList<ExerciseModel>) :
         holder.tvItem.text = model.id.toString()
 
         // Updating the current item and the completed item in the UI and changing the background and text color according to it..)
-        // Updating the background and text color according to the flags that is in the list.
-        // A link to set text color programmatically and same way we can set the drawable background also instead of color.
-        // https://stackoverflow.com/questions/8472349/how-to-set-text-color-to-a-text-view-programmatically
+        // Updating the background and text color according to the flags that is in the list
         when {
             // coming in recyclerview, if current item is selected then set its background to white
             model.isSelected -> {
