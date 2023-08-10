@@ -159,7 +159,7 @@ class BMIActivity : AppCompatActivity() {
         binding?.llDisplayBMIResult?.visibility = View.VISIBLE
 
         // This is used to round the result value to 2 decimal values after "."
-        // what does this line do?
+       
         val bmiValue = BigDecimal(bmi.toDouble()).setScale(2, RoundingMode.HALF_EVEN).toString()
 
         binding?.tvBMIValue?.text = bmiValue // Value is set to TextView
